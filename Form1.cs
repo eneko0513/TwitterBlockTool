@@ -176,7 +176,14 @@ namespace BlockSpecificUsersOnTwitter
                 {
                     if (Convert.ToBoolean(advancedDataGridView_main.Rows[i].Cells[0].Value))
                     {
-                        tokens.Blocks.Create(screen_name => advancedDataGridView_main.Rows[i].Cells[1].Value);
+                        try
+                        {
+                            tokens.Blocks.Create(screen_name => advancedDataGridView_main.Rows[i].Cells[1].Value);
+                        }
+                        catch
+                        {
+
+                        }
                     }
                 }
                 DialogResult result2 = MessageBox.Show("ブロックが完了しました",
